@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Practical_7.Models.Feedback>
+
+@{
+    ViewBag.Title = "Feedback List";
+}
+
+<h2>Feedback List</h2>
+
+<table border="1" cellpadding="8">
+
+    <tr>
+        <th>Enrollment No</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EnrollmentNo</td>
+            <td>@item.Name</td>
+            <td>@item.Subject</td>
+            <td>@item.Rating</td>
+            <td>@item.Comments</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+@Html.ActionLink("Give Another Feedback", "Create", "Feedback")
+
+<br />
+<br />
+
+@Html.ActionLink("Back to Home", "Index", "Feedback")
